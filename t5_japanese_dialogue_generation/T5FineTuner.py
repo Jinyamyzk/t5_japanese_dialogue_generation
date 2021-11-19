@@ -1,10 +1,4 @@
-import pytorch_lightning as pl
-from transformers import (
-    AdamW,
-    T5ForConditionalGeneration,
-    T5Tokenizer,
-    get_linear_schedule_with_warmup
-)
+
 
 class T5FineTuner(pl.LightningModule):
     def __init__(self, hparams):
