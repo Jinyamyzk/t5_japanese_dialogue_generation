@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "t5_japanese_dialogue_generation"
+version = "0.1.0"
+description = ""
+authors = ["Jinyamyzk <ddjinya@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = ">=1.7.1"
+torchtext = ">=0.8.0,"
+torchvision = ">=0.8.2"
+transformers = ">=4.4.2,"
+pytorch-lightning = ">=1.2.1"
+sentencepiece = "^0.1.96"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
