@@ -66,7 +66,7 @@ args_dict.update({
     "max_target_length": 128,  # 出力文の最大トークン数
     "train_batch_size":  8,
     "eval_batch_size":   8,
-    "num_train_epochs":  1,
+    "num_train_epochs":  10,
     })
 args = argparse.Namespace(**args_dict)
 
