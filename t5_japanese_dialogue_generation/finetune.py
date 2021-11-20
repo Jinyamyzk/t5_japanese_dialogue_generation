@@ -11,18 +11,9 @@ from string import punctuation
 
 import numpy as np
 import torch
-from torch.utils.data import Dataset, DataLoader
-
-import pytorch_lightning as pl
-from transformers import (
-    AdamW,
-    T5ForConditionalGeneration,
-    T5Tokenizer,
-    get_linear_schedule_with_warmup
-)
-
 
 from TsvDataset import TsvDataset
+from T5FineTuner import T5FineTuner
 
 # 事前学習済みモデル
 PRETRAINED_MODEL_NAME = "sonoisa/t5-base-japanese"

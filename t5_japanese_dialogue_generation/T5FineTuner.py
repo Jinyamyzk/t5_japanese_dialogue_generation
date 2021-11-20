@@ -1,9 +1,16 @@
-
+import pytorch_lightning as pl
+from transformers import (
+    AdamW,
+    T5ForConditionalGeneration,
+    T5Tokenizer,
+    get_linear_schedule_with_warmup
+)
 
 class T5FineTuner(pl.LightningModule):
     def __init__(self, hparams):
         super().__init__()
-        self.hparams = hparams
+        # self.hparams = hparams
+        self.save_hyperparameters(hparams)
 
         # 事前学習済みモデルの読み込み
         self.model = T5ForConditionalGeneration.from_pretrained(hparams.model_name_or_path)
