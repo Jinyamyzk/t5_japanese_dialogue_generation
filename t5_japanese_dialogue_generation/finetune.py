@@ -11,13 +11,12 @@ from string import punctuation
 import numpy as np
 import torch
 import pytorch_lightning as pl
-from utils.TsvDataset import TsvDataset
 from utils.T5FineTuner import T5FineTuner
 
 # 事前学習済みモデル
 PRETRAINED_MODEL_NAME = "sonoisa/t5-base-japanese"
 # 転移学習済みモデル
-MODEL_DIR = "/content/model"
+MODEL_DIR = "."
 
 # 乱数シードの設定
 def set_seed(seed):
@@ -65,7 +64,7 @@ args_dict.update({
     "max_target_length": 128,  # 出力文の最大トークン数
     "train_batch_size":  8,
     "eval_batch_size":   8,
-    "num_train_epochs":  10,
+    "num_train_epochs":  1,
     })
 args = argparse.Namespace(**args_dict)
 
