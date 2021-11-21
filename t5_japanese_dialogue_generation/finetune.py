@@ -1,6 +1,5 @@
 import argparse
 import glob
-import os
 import json
 import time
 import logging
@@ -12,8 +11,8 @@ from string import punctuation
 import numpy as np
 import torch
 import pytorch_lightning as pl
-from TsvDataset import TsvDataset
-from T5FineTuner import T5FineTuner
+from utils.TsvDataset import TsvDataset
+from utils.T5FineTuner import T5FineTuner
 
 # 事前学習済みモデル
 PRETRAINED_MODEL_NAME = "sonoisa/t5-base-japanese"
@@ -75,6 +74,7 @@ train_params = dict(
     gpus=args.n_gpu,
     max_epochs=args.num_train_epochs,
     precision= 16 if args.fp_16 else 32,
+    amp_backend="apex",
     amp_level=args.opt_level,
     gradient_clip_val=args.max_grad_norm,
 )

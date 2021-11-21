@@ -1,4 +1,6 @@
-from torch.utils.data import Dataset, DataLoader
+import os
+from torch.utils.data import Dataset
+
 class TsvDataset(Dataset):
     def __init__(self, tokenizer, data_dir, type_path, input_max_len=512, target_max_len=512):
         self.file_path = os.path.join(data_dir, type_path)
