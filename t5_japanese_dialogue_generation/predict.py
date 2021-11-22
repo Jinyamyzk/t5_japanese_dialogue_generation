@@ -11,7 +11,7 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer
 from utils.TsvDataset import TsvDataset
 
 # 転移学習済みモデル
-MODEL_DIR = "/content/model"
+MODEL_DIR = "."
 
 # 各種ハイパーパラメータ
 args_dict = dict(
@@ -74,7 +74,7 @@ for batch in tqdm(test_loader):
 
 # csvに結果を書き出す
 dir="t5_japanese_dialogue_generation/content/prediction_result.csv"
-with open(dir,"w") as f:
+with open("prediction_result.csv","w") as f:
   writer = csv.writer(f)
   writer.writerow(["input","generated response","acutual response"])
   for output, target, input in zip(outputs, targets, inputs):
